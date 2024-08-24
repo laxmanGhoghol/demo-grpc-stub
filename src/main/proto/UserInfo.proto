@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.example.demo.grpc";
+
+package userInfo;
+
+service userInfoService {
+    rpc get (GetUserInfoRequest) returns (UserInfoRsponse) {}
+}
+
+message GetUserInfoRequest {
+    string name = 1;
+}
+
+message UserInfoRsponse {
+    string message = 1;
+    string name = 2;
+    uint32 age = 3;
+}
